@@ -1,5 +1,9 @@
 #!/bin/bash
 
+usage(){
+	echo "auto commit to git"
+}
+
 cd ~/.memolist/
 
 git pull --no-edit
