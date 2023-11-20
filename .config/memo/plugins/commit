@@ -4,7 +4,7 @@ usage(){
 	echo "auto commit to git"
 }
 
-cd ~/.memolist/
+cd ~/.memolist/memo/
 
 git pull --no-edit
 git add .
