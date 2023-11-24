@@ -2,13 +2,11 @@ return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
-		"theHamsta/nvim-dap-virtual-text",
 		"mfussenegger/nvim-dap-python",
 		"leoluz/nvim-dap-go",
 	},
 	config = function()
 		require('dap-go').setup()
-		require("nvim-dap-virtual-text").setup()
 		local dapui = require('dapui')
 		local dap = require('dap')
 		-- 見た目の設定
