@@ -24,6 +24,11 @@ vim.g['airline#extensions#tabline#enabled'] = 1
 vim.g.mapleader = " "
 vim.opt.laststatus = 2
 
+--folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+
 require("settings/keymap")
 require("settings/cmd")
 
