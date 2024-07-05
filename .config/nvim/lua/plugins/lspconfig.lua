@@ -1,6 +1,7 @@
 return {
 	'williamboman/nvim-lspconfig',
 	event = {'BufReadPre', 'BufNewFile'},
+
 	config = function()
 		-- Setup language servers.
 		local lspconfig = require('lspconfig')
@@ -8,6 +9,7 @@ return {
 		lspconfig.pylsp.setup {}
 		lspconfig.gopls.setup {}
 		lspconfig.clangd.setup {}
+		lspconfig.dockerls.setup {}
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
