@@ -6,10 +6,22 @@ return {
 		-- Setup language servers.
 		local lspconfig = require('lspconfig')
 		lspconfig.tsserver.setup {}
-		lspconfig.pylsp.setup {}
 		lspconfig.gopls.setup {}
 		lspconfig.clangd.setup {}
 		lspconfig.dockerls.setup {}
+
+		lspconfig.pylsp.setup {
+			before_init = function(params)
+				params.processId = vim.NIL
+			end,
+			cmd = {
+				'docker',
+				'exec',
+				'-i',
+				'lsp',
+				'pylsp',
+			},
+		}
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions

@@ -11,4 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('plugins', opts)
+local opts = {}
+local spec = {
+	{import = "lazyvim.plugins.extras.coding.luasnip"}
+}
+
+require('lazy').setup('plugins', opts, spec)
