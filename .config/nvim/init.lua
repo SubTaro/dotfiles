@@ -25,24 +25,6 @@ vim.g['airline#extensions#tabline#enabled'] = 1
 vim.g.mapleader = " "
 vim.opt.laststatus = 2
 
--- クリップボードの共有
-vim.opt.clipboard = 'unnamedplus'
-if vim.fn.has("wsl") then
-  vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-      ["+"] = "win32yank.exe -i --crlf",
-      ["*"] = "win32yank.exe -i --crlf"
-    },
-    paste = {
-      ["+"] = "win32yank.exe -o --crlf",
-      ["*"] = "win32yank.exe -o --crlf"
-    },
-    cache_enable = 0,
-  }
-end
-
-
 --folding
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
