@@ -10,18 +10,25 @@ return {
 		lspconfig.clangd.setup {}
 		lspconfig.dockerls.setup {}
 
-		lspconfig.pylsp.setup {
-			before_init = function(params)
-				params.processId = vim.NIL
-			end,
-			cmd = {
-				'docker',
-				'exec',
-				'-i',
-				'lsp',
-				'pylsp',
-			},
-		}
+		if is_docker_running("lsp") then
+			print("Container is runnning")
+
+			lspconfig.pylsp.setup {
+				before_init = function(params)
+					params.processId = vim.NIL
+				end,
+				cmd = {
+					'docker',
+					'exec',
+					'-i',
+					'lsp',
+					'pylsp',
+				},
+			}
+		else
+			lspconfig.pylsp.setup{}
+		end
+			
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
