@@ -3,11 +3,11 @@ vim.keymap.set('i', '(', '()<Left>')
 vim.keymap.set('i', '()', '()')
 vim.keymap.set('i', '(<Enter>', '()<Left><CR><ESC><S-o>')
 
-vim.keymap.set('i', '{', '{}<ESC>i')
+vim.keymap.set('i', '{', '{}<Left>')
 vim.keymap.set('i', '{}', '{}')
 vim.keymap.set('i', '{<Enter>', '{}<Left><CR><ESC><S-o>')
 
-vim.keymap.set('i', '[', '[]<ESC>i')
+vim.keymap.set('i', '[', '[]<Left>')
 vim.keymap.set('i', '[]', '[]')
 vim.keymap.set('i', '[<Enter>', '[]<Left><CR><ESC><S-o>')
 
